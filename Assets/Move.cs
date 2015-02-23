@@ -67,4 +67,11 @@ public class Move : MonoBehaviour {
 		else
 			co.transform.localScale = new Vector2 (1, dist + 1);
 	}
+
+	void OnTriggerEnter2D(Collider2D co) {
+		if (co != wall) {
+			print ("Player lost:" + name);
+			Destroy (gameObject);
+		}
+	}
 }
